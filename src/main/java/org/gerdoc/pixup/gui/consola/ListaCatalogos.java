@@ -25,7 +25,8 @@ public class ListaCatalogos extends LecturaAccion
         System.out.println( "1.-Estado");
         System.out.println( "2.-Municipio");
         System.out.println( "3.-Colonia");
-        System.out.println( "4.-Salir");
+        System.out.println( "4.-Artista");
+        System.out.println( "5.-Salir");
     }
     @Override
     public int valorMinMenu()
@@ -34,10 +35,7 @@ public class ListaCatalogos extends LecturaAccion
     }
 
     @Override
-    public int valorMaxMenu()
-    {
-        return 4;
-    }
+    public int valorMaxMenu() {return 6;}
 
     @Override
     public void procesaOpcion()
@@ -54,9 +52,16 @@ public class ListaCatalogos extends LecturaAccion
             case 3:
                 System.out.println( "No implementado" );
                 break;
+            case 5:
+                ejecutable = DisqueraCatalogos.getInstance();
+                if (ejecutable != null )
+                {
+                    ejecutable.setFlag( true );
+                    ejecutable.run( );
+                }
+                break;
         }
-        ejecutable.setFlag( true );
-        ejecutable.run( );
+
 
     }
 }
